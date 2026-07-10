@@ -10,6 +10,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/rgb_plus.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -52,6 +54,13 @@
             #sensor-binding-cells = <0>;
             tap-ms = <0>;
         };
+
+        rgb_plus: rgb_plus {
+            compatible = "zmk,behavior-rgb-plus";
+            label = "RGB_PLUS";
+            #binding-cells = <1>;
+        };
+        
     };
 
     combos {
@@ -124,7 +133,7 @@
 
         layer_3 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&rgb_plus eff_next  &rgb_plus eff_prev  &rgb_plus reac_tog  &rgb_plus spd_inc  &rgb_plus spd_dec  &rgb_plus bri_inc    &rgb_plus bri_dec  &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
