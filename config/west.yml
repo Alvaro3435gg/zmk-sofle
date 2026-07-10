@@ -27,5 +27,8 @@ manifest:
     - name: zmk-module-runtime-input-processor
       remote: cormoran
       revision: zmk-v0.3.0.0
+    - name: zmk-rgb-plus
+      url: https://github.com/tfranz25/zmk-rgb-plus
+      revision: main
   self:
     path: config
